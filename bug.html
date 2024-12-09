@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Incorrect way to add an event listener
+    document.getElementById("myDiv").onclick = function() {
+      console.log("Click!");
+    };
+
+    //Another potential issue
+    document.getElementById("myDiv").addEventListener("click", function(){
+        console.log("Another click!");
+    },false);
+
+    //Attaching the same event handler twice
+    document.getElementById("myDiv").addEventListener("click", function(){
+        console.log("Yet another click!");
+    },false);
+  </script>
+</body>
+</html>
